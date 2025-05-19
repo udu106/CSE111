@@ -1,0 +1,196 @@
+// Task 1
+
+public class UniversityTester
+{
+  public static void main(String [] args)
+  {
+    University u1 = new University();
+    University u2 = new University();
+    System.out.println(u1);
+    System.out.println(u2);
+    System.out.println(u1.name);
+    System.out.println(u1.country);
+    System.out.println(u2.name);
+    System.out.println(u2.country);
+    u1.name = "Imperial College London";
+    u1.country = "England";
+    u2.name = "BRAC University";
+    u2.country = "Bangladesh";
+    System.out.println(u1.name);
+    System.out.println(u1.country);
+    System.out.println(u2.name);
+    System.out.println(u2.country);
+  }
+}
+
+// Task 2
+
+public class Student
+{
+  public String name = "Default";
+  public int id = 0;
+}
+
+// TAsk 3
+
+public class CSECourse
+{
+  public String courseName = "Programming Language II";
+  public String courseCode = "CSE111";
+  public int credit = 3;
+}
+
+// Task 4
+
+public class ImaginaryNumber
+{
+  public int realPart = 0;
+  public int imaginaryPart = 0;
+  public void printNumber()
+  {
+    System.out.println(realPart +" + "+ imaginaryPart + "i");
+  }
+}
+
+// Task 5
+
+public class Course
+{
+  public String CourseName;
+  public String CourseCode;
+  public int CourseCredit;
+  public void updateDetails(String a1, String a2, int n)
+  {
+    CourseName = a1;
+    CourseCode = a2;
+    CourseCredit = n;
+  }
+  public void displayCourse()
+  {
+    System.out.println("Course Name: "+CourseName);
+    System.out.println("Course Code: "+CourseCode);
+    System.out.println("Course Credit: "+CourseCredit);
+  }
+}
+
+// TAsk 6
+
+public class Assignment
+{
+  public int tasks;
+  public String difficulty;
+  public boolean submission;
+  
+  public void printDetails()
+  {
+    System.out.println("Number of tasks: "+tasks);
+    System.out.println("Difficulty level: "+difficulty);
+    System.out.println("Submission required: "+submission);
+  }
+  public String makeOptional()
+  {
+    if (submission)
+    {
+      submission = false;
+      return "Assignment will not require submission";
+    }
+    else 
+    {
+      return "Submission is already not required";
+    }
+  }
+}
+
+// Task 7
+
+public class CellPhone
+{
+  public String model = "unknown";
+  public int stored = 0;
+  public String [] array = new String [3];
+  
+  public void storeContact(String a1)
+  {
+    if (stored < array.length)
+    {
+      array[stored] = a1;
+      stored ++;
+      System.out.println("Contact Stored");
+    }
+    else
+    {
+      System.out.println("Memory full. New contact can't be stored.");
+    }
+  }
+  public void printDetails()
+  {
+    System.out.println("Phone Model "+model);
+    System.out.println("Contacts Stored "+stored);
+    if (stored > 0)
+    {
+      System.out.println("Stored Contacts:");
+      for (int i = 0; i < stored; i++)
+      {
+        System.out.println(array[i]);
+      }
+    }
+  }
+}
+
+//Task 8
+
+public class Employee
+{
+  public String name;
+  public double salary = 30000.0;
+  public String post = "junior";
+  public double tax = 0.0;
+  
+  public void newEmployee(String n)
+  {
+    this.name = n;
+  }  
+  public void displayInfo ()
+  {
+    System.out.println("Employee Name: "+name);
+    System.out.println("Employee Salary: "+salary+ " Tk");
+    System.out.println("Employee Designation: "+post);
+  }
+  
+  public void calculateTax()
+  {
+    if (salary > 30000.0 && salary <= 50000.0)
+    {
+      tax += salary * 0.1;
+      System.out.println(name+" Tax Amount: "+tax+" Tk");
+    }
+    else if(salary > 50000.0)
+    {
+      tax += salary * 0.3;
+      System.out.println(name+" Tax Amount: "+tax+" Tk");
+    } 
+    else 
+    {
+      System.out.println("No need ta pay tax");
+    }
+  }
+  
+  public void promoteEmployee(String n)
+  {
+    post = n;
+    if (post.equals("senior"))
+    {
+      salary += 25000.0;
+    }
+    else if (post.equals("lead"))
+    {
+      salary += 50000.0;
+    }
+    else if (post.equals("manager"))
+    {
+      salary += 75000.0;
+    }
+    System.out.println(name+" has been promoted to "+post);
+    System.out.println("New Salary: "+salary+" Tk");
+  }
+}
